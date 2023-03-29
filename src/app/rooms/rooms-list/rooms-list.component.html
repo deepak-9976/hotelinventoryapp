@@ -1,0 +1,24 @@
+<p>rooms-list works!</p>
+Rooms List
+    <!-- {{ roomList |json}} -->
+
+    <table class="table">
+    <tr>
+        <th>Room Number</th>
+        <th>Room Price</th>
+        <th>Room Amenities</th>
+        <th>Checkin Time</th>
+        <th>Check out time</th>
+        <th>Rating</th>
+        <th>Select Room</th>
+    </tr>
+    <tr *ngFor="let room of rooms |slice :0:3">
+        <td>{{ room.roomNumber}}</td>
+        <td>{{ room.price |currency : 'GBP'}}</td>
+        <td>{{ room.amenities |titlecase}}</td>
+        <td>{{ room.checkInTime |date}}</td>
+        <td>{{ room.checkOutTime |date : 'dd/MMM/YYYY'}}</td>
+        <td>{{ room.rating |number :'1.1-2'}}</td>
+        <td><button class="btn btn-primary" (click)="selectRoom(room)">Select Room</button></td>
+    </tr>
+    </table>

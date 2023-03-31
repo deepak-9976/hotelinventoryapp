@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RoomsListComponent } from './rooms/rooms-list/rooms-list.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { EmployeeComponent } from './employee/employee.component';
+import { HeaderComponent } from './header/header.component';
+import { ContainerComponent } from './container/container.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     RoomsComponent,
     RoomsListComponent,
+    EmployeeComponent,
+    HeaderComponent,
+    ContainerComponent,
     
   ],
   imports: [

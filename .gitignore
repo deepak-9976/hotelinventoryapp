@@ -11,6 +11,8 @@
 npm-debug.log
 yarn-error.log
 
+/hotelapi/node_modules
+/hotelapi/dist
 # IDEs and editors
 .idea/
 .project

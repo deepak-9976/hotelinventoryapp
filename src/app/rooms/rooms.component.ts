@@ -27,7 +27,9 @@ export class RoomsComponent {
   constructor(private roomsService :RoomsService) { }
 
   ngOnInit(): void{
-    this.roomList = this.roomsService.getRooms()
+    this.roomsService.getRooms().subscribe(rooms =>{
+      this.roomList = rooms;
+    } );
 
 
   }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Room, RoomList } from './rooms';
 import { RoomsService } from './services/rooms.service';
 
@@ -21,12 +22,22 @@ export class RoomsComponent {
     totalRooms: 20
   }
 
-  roomList: RoomList[] = []
+  roomList: RoomList[] = [];
+
+  stream = new Observable(observer => {
+    observer.next('user1');
+    observer.next('user2');
+    observer.next('user3');
+    observer.complete();
+  })
+
+
 
 
   constructor(private roomsService :RoomsService) { }
 
   ngOnInit(): void{
+    this.stream.subscribe((data) => console.log(data));
     this.roomsService.getRooms().subscribe(rooms =>{
       this.roomList = rooms;
     } );

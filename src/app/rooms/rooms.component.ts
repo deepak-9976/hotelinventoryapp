@@ -54,21 +54,29 @@ export class RoomsComponent {
   selectRoom(room: RoomList){
     console.log(room);
   }
+
+  getRooms(){
+    console.log(this.roomList);
+  }
   addRoom() {
     const room: RoomList = {
-      roomNumber: 103,
+      roomNumber: 4,
       roomType: 'Standard room',
       amenities: 'Air condition bathroom',
-      price: 400,
+      price: 600,
       photos: 'https://unsplash.com/photos/qIffpsNK90I',
       checkInTime: new Date('12-Mar-2023'),
       checkOutTime: new Date('13-Mar-2023'),
       rating: 4.76
 
     };
-    this.roomList.push();
+    //this.roomList.push();
+    this.roomsService.addRooms(room).subscribe((data) => 
+    this.roomList = data)
   }
 
+  editRoom(){
 
+  }
 
 }

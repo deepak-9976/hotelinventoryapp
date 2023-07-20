@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RoomList } from '../rooms';
+import { RoomsService } from '../services/rooms.service';
 
 @Component({
   selector: 'app-rooms-add',
@@ -19,5 +20,13 @@ export class RoomsAddComponent {
     rating: 0
 
   }
+  successMessage: string = '';
+  constructor(private roomsService: RoomsService){}
 
+  addRoom(){
+    this.roomsService.addRooms(this.room).subscribe((data) => { this.successMessage = 'Room added successfully'
+      
+    })
+
+  }
 }

@@ -1,20 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import {MatExpansionModule} from '@angular/material/expansion';
-import { BookingComponent } from './booking/booking.component';
-
-
+import { HomeComponent } from './home.component';
 
 const routes: Routes = [
-  {path: 'booking' ,component: BookingComponent},
+  {path: 'home' ,component: HomeComponent},
 
 ]
 
 @NgModule({
   declarations: [],
-
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class BookingRoutingModule { }
+export class HomeRoutingModule { }

@@ -7,16 +7,14 @@ import { RoomsService } from '../rooms/services/rooms.service';
   styleUrls: ['./employee.component.css'],
   providers: [RoomsService]
 })
-export class EmployeeComponent implements OnInit {
+export class EmployeeComponent {
 
   empName :String = 'John';
 
   constructor(@Self() private roomService :RoomsService){}
   
   
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+
 
 
 }

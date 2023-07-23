@@ -7,6 +7,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatIconModule} from '@angular/material/icon';
+
 
 
 
@@ -16,7 +19,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     BookingComponent
   ],
   imports: [
-    CommonModule, BookingRoutingModule, ReactiveFormsModule,FormsModule,MatFormFieldModule,MatInputModule,MatDatepickerModule,MatNativeDateModule 
+    CommonModule, BookingRoutingModule, ReactiveFormsModule,FormsModule,MatFormFieldModule,MatInputModule,MatDatepickerModule,
+    MatNativeDateModule,MatExpansionModule,MatIconModule
   ]
 })
 export class BookingModule { }

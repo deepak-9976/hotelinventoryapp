@@ -10,8 +10,14 @@ import { CommonModule } from '@angular/common';
 })
 export class BookingComponent {
 
+ 
+
   //bookingForm!: FormGroup;
   submitted = false;
+
+  
+
+ 
 
 
   constructor(private fb: FormBuilder, private cd: ChangeDetectorRef) { }
@@ -34,18 +40,41 @@ export class BookingComponent {
       bookingDate: [''],
       mobileNumber: [''],
       guestName: [''],
-      guestAddress: [''],
-      guestCity: [''],
-      guestState: [''],
-      guestCountry: [''],
-      guestZipCode: [''],
-      guestCount: [''],
+      address: this.fb.group({
+      addressline1: [''],
+      addressline2: [''],
+      City: [''],
+      State: [''],
+      Country: [''],
+      ZipCode: [''],
+    }),
+      guests: this.fb.array([
+        this.fb.group({ guestName: [''], age: new FormControl('')}),
+      ]),
     })
 // Submit Registration Form
+
+get guests() { 
+  
+  return this.bookingForm.get('guests') as FormArray; }
 
    addBooking(){
     console.log(this.bookingForm.getRawValue());
    }
+
+   addGuest(){
+    this.guests.push(this.fb.group({ guestName: [''], age: new FormControl('')}))
+
+   }
+
+   removeGuest(i: number){
+    
+    this.guests.removeAt(i)
+
+   }
+
+   
+ 
 
 }
 

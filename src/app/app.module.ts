@@ -24,6 +24,9 @@ import { RoomsRoutingModule } from './rooms/rooms-routing.module';
 import { BookingRoutingModule } from './booking/booking-routing.module';
 import { JsonPipe } from '@angular/common';
 import { BookingModule } from './booking/booking.module';
+import { HomeModule } from './home/home.module';
+import { OAuthService } from 'angular-oauth2-oidc';
+import { MatAccordion, MatExpansionModule, MAT_ACCORDION } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ import { BookingModule } from './booking/booking.module';
     BrowserModule,
     RoomsModule,
     BookingModule,
+    HomeModule,
     BookingRoutingModule,
     RoomsRoutingModule,
     AppRoutingModule,
@@ -52,9 +56,11 @@ import { BookingModule } from './booking/booking.module';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+  MatExpansionModule
+  
 
   ],
-  providers: [{ provide: JsonPipe }],
+  providers: [OAuthService,{ provide: JsonPipe }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
